@@ -24,7 +24,7 @@ public class ReturnsProductsTest {
     @SneakyThrows
     void returnsProducts() {
         Response<ResponseBody> response = productService.getProducts().execute();
-        assertThat(response.isSuccessful(), CoreMatchers.is(true));
+        assertThat(response.code(), CoreMatchers.is(500));
         System.out.println();
     }
 }
